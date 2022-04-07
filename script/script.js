@@ -64,6 +64,10 @@ class Bd {
         }
         return despesas
     }
+
+    pesquisar(despesa){
+        console.log(despesa);
+    }
 }
 
 let bd = new Bd();
@@ -152,7 +156,23 @@ function carregarListaDespesas(){
         console.log(d);
     });
 
+
+
 }
+function pesquisaDespesa(){
+    let ano = document.getElementById('ano').value;
+    let mes = document.getElementById('mes').value;
+    let dia = document.getElementById('dia').value;
+    let tipo = document.getElementById('tipo').value;
+    let descricao = document.getElementById('descricao').value;
+    let valor = document.getElementById('valor').value;
+
+    let despesa = new Despesas(ano, mes, dia, tipo, descricao, valor)
+    
+    bd.pesquisar(despesa);
+
+}
+
 
 //foi introduzido, dessa forma, BD, o índice dinâmico
 //objeto BD é mais para controlar a lógica de acrescentar 1 no id, para, assim, não ficar sobrepondo o id anterior, a informação anterior.
