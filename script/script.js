@@ -35,7 +35,6 @@ class Bd {
     }
     //lógica para o id dinâmico e convertendo o objeto literário em JSON
     gravar(d) {
-        //
         let id = this.getProximoId();
 
         localStorage.setItem(id, JSON.stringify(d));
@@ -65,9 +64,10 @@ function cadastrarDespesas() {
     );
 
     if(despesas.validarDados()) {
-        //bd.gravar(despesas);
+        bd.gravar(despesas);
+        $('#sucessoGravacao').modal('show')
     } else {
-        
+        $('#erroGravacao').modal('show')
     }
     
 }
