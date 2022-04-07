@@ -62,7 +62,7 @@ class Bd {
 
             despesas.push(despesa);
         }
-        return despesas;
+        return despesas
     }
 }
 
@@ -115,13 +115,13 @@ function carregarListaDespesas(){
     despesas = bd.recuperarTodosRegistros();
 
     //selecionando o elemento Tbody
-    let listaDespesas = document.getElementById('listaDespesas');
+    let listaDespesas = document.getElementById("listaDespesas");
 
     //percorrer o array despesas, listando cada despesa de forma dinâmica
-    despesas.forEach(function(d) {
+    despesas.forEach(function(d){
 
         //criando a linha, tr
-        let linha = listaDespesas.insertRow();
+        var linha = listaDespesas.insertRow();
 
         //criar as colunas, td
         linha.insertCell(0).innerHTML =`${d.dia}/${d.mes}/${d.ano}`;
@@ -139,9 +139,9 @@ function carregarListaDespesas(){
             case '5': d.tipo = 'Transporte'
                 break;
         }
-        listaDespesas.insertCell(1).innerHTML = d.tipo;
-        listaDespesas.insertCell(2).innerHTML = d.descricao;
-        listaDespesas.insertCell(3).innerHTML = d.valor;
+        linha.insertCell(1).innerHTML = d.tipo;
+        linha.insertCell(2).innerHTML = d.descricao;
+        linha.insertCell(3).innerHTML = d.valor;
         console.log(d);
     });
 
