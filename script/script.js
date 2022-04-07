@@ -41,6 +41,28 @@ class Bd {
 
         localStorage.setItem('id', id);
     }
+
+    recuperarTodosRegistros(){
+
+        //array de despesas
+        let despesas = Array();
+
+        let id = localStorage.getItem('id');
+
+        //dessa forma, da para recuperar todas as despesas no local Storage
+        for(let i = 1; i <= id; i++) {
+
+            //recuprar a despesas
+            let despesa = JSON.parse(localStorage.getItem(i));
+
+            //verificar se existe a possibilidade de haver índices que foram removidos/pulados
+            if(despesa === null){
+                continue
+            }
+
+            despesas.push(despesa);
+        }
+    }
 }
 
 let bd = new Bd();
@@ -84,6 +106,12 @@ function cadastrarDespesas() {
         $('#modalRegistroDespesas').modal('show')
     }
     
+}
+
+function carregarListaDespesas(){
+
+    let despesas = Array();
+    despesas = bd.recuperarTodosRegistros();
 }
 
 //foi introduzido, dessa forma, BD, o índice dinâmico
