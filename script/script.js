@@ -121,7 +121,7 @@ function carregarListaDespesas(){
     despesas.forEach(function(d) {
 
         //criando a linha, tr
-        let linha = listaDesespesas.insertRow();
+        let linha = listaDespesas.insertRow();
 
         //criar as colunas, td
         linha.insertCell(0).innerHTML =`${d.dia}/${d.mes}/${d.ano}`;
@@ -139,9 +139,9 @@ function carregarListaDespesas(){
             case '5': d.tipo = 'Transporte'
                 break;
         }
-        listaDesespesas.insertCell(1).innerHTML = d.tipo;
-        listaDesespesas.insertCell(2).innerHTML = d.descricao;
-        listaDesespesas.insertCell(3).innerHTML = d.valor;
+        listaDespesas.insertCell(1).innerHTML = d.tipo;
+        listaDespesas.insertCell(2).innerHTML = d.descricao;
+        listaDespesas.insertCell(3).innerHTML = d.valor;
         console.log(d);
     });
 
