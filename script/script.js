@@ -95,7 +95,14 @@ function cadastrarDespesas() {
         document.getElementById('modal_btn').innerHTML = 'Voltar';
         document.getElementById('modal_btn').className = 'btn btn-primary btn-success';
 
-        $('#modalRegistroDespesas').modal('show')
+        $('#modalRegistroDespesas').modal('show');
+
+        ano.value = '';
+        mes.value = '';
+        dia.value = '';
+        tipo.value = '';
+        descricao.value = '';
+        valor.value = '';
     } else {
 
         document.getElementById('modal_titulo').innerHTML = 'Erro na inclusão do Registro';
@@ -104,7 +111,7 @@ function cadastrarDespesas() {
         document.getElementById('modal_btn').innerHTML = 'Voltar e corrigir';
         document.getElementById('modal_btn').className = 'btn btn-primary btn-danger';
 
-        $('#modalRegistroDespesas').modal('show')
+        $('#modalRegistroDespesas').modal('show');
     }
     
 }
