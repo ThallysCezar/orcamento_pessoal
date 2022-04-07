@@ -8,6 +8,15 @@ class Despesas {
         this.descricao = descricao;
         this.valor = valor;
     }
+
+    validarDados(){
+        for(let i in this) {
+            if(this[i] == undefined || this[i] == '' || this[i] == null){
+                return false
+            }
+        }
+        return true
+    }
 }
 
 //lógica dinâmica para o ID
@@ -55,7 +64,12 @@ function cadastrarDespesas() {
         valor.value
     );
 
-    bd.gravar(despesas);
+    if(despesas.validarDados()) {
+        //bd.gravar(despesas);
+    } else {
+        
+    }
+    
 }
 
 //foi introduzido, dessa forma, BD, o índice dinâmico
